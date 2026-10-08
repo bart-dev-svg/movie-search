@@ -42,7 +42,7 @@ function App() {
     <div>
       <h1>Movie search</h1>
 
-      <form onSubmit={searchMovies}>
+      <form className="search-form" onSubmit={searchMovies}>
         <input
           type="text"
           placeholder="Search for a movie"
@@ -52,10 +52,10 @@ function App() {
         <button type="submit">Search</button>
       </form>
 
-      {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
+      {loading && <p className="message">Loading...</p>}
+      {error && <p className="message">{error}</p>}
 
-      <ul>
+      <ul className="movie-grid">
         {movies.map((movie) => (
           <MovieCard
             key={movie.imdbID}
